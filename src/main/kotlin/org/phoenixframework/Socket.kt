@@ -437,9 +437,9 @@ class Socket(
     this.heartbeatTask?.cancel()
     this.heartbeatTask = null
 
-    // Since the connections onClose was null'd out, inform all state callbacks
-    // that the Socket has closed
-    this.stateChangeCallbacks.close.forEach { it.second.invoke() }
+    // Since the connections onClose was null'd out, invoke connection closing here
+    this.onConnectionClosed(code)
+
     callback?.invoke()
   }
 
