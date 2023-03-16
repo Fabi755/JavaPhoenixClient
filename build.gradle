@@ -22,7 +22,7 @@ plugins {
 //}
 //
 //apply plugin: "org.jetbrains.dokka"
-//apply plugin: "com.vanniktech.maven.publish"
+apply plugin: 'maven'
 
 group 'com.github.dsrees'
 version '1.0.1'
